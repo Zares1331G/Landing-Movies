@@ -1,9 +1,6 @@
 import React from 'react';
 
 
-
-
-
 const Card = ({title,img,date}) => {
 
 const baseImageUrl = `https://image.tmdb.org/t/p/w300${img}`;
