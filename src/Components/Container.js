@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './Cards';
+import Card from './Card';
 
 class Container extends React.Component{
     state = { movies : null };
@@ -11,23 +11,20 @@ class Container extends React.Component{
     }
     render(){
         console.log(this.state.movies);
+        const {movies}=this.state;
+
+        const cards = !movies ? "Loading..." : movies.results.map((card, index)=>(
+            <Card
+                key={index}
+                img={card.poster_path}
+                title={card.original_title}
+                date={card.release_date}
+            />
+        ));
+
         return (
-            <div>
-                {!this.state.movies ? 'Loading...' :
-                this.state.movies.results.map((movie, index)=>{
-                    return (
-                        <div className="container" key={index}>
-                            <div className="row">
-                                <Cards 
-                                img={movie.poster_path}
-                                title={movie.original_title}
-                                date={movie.release_date}
-                                />   
-                            </div>
-                            
-                        </div>
-                    )                        
-                })}                
+            <div className="container">
+                <div className="row">{cards}</div>
             </div>
         )
     };
