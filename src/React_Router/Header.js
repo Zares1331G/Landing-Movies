@@ -1,13 +1,9 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 const Header = () => {
     return ( 
         <div>
-            <button className="btn btn-primary">Hola</button>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                
-            </nav>
+            <div className="jumbotron"><h1>Aqui tus peliculas Favoritas!</h1></div>
         </div>
      );
 }
