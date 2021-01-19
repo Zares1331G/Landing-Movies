@@ -13,9 +13,10 @@ class Container extends React.Component{
         console.log(this.state.movies);
         const {movies}=this.state;
 
-        const cards = !movies ? "Loading..." : movies.results.map((card, index)=>(
+        const cards = !movies ? "Loading..." : movies.results.map((card)=>(
             <Card
-                key={index}
+                key={card.id}
+                id={card.id}
                 img={card.poster_path}
                 title={card.original_title}
                 date={card.release_date}

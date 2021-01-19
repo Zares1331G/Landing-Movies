@@ -1,17 +1,22 @@
 import React from 'react';
+import{ Link } from 'react-router-dom';
 
 
-const Card = ({title,img,date}) => {
+const Card = ({title, img, date, id}) => {
 
-const baseImageUrl = `https://image.tmdb.org/t/p/w300${img}`;
+const baseImageUrl = `https://image.tmdb.org/t/p/w200${img}`;
 
     return (
-        <div className="col-sm-4 d-flex flex-wrap">
-            <div className="card-body">
-                <img className="photos" src={baseImageUrl}/>
-                <p>{title}</p>
-                <p>{date}</p>    
-            </div>            
+        <div className="col-sm-3 d-flex flex-wrap">
+            <Link to={`/movie/${id}`}>    
+                <div className="card-body">
+                    <div>
+                        <img className="photos" src={baseImageUrl}/>
+                    </div>                    
+                    <strong>{title}</strong>
+                    <p>{date}</p>   
+                </div>
+            </Link>                
         </div>       
      );
 }

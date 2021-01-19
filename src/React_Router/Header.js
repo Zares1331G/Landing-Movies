@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return ( 
         <div>
-            <div className="jumbotron"><h1>Aqui tus peliculas Favoritas!</h1></div>
+            <div className="jumbotron"><h1>MovieTex... Todas tus peliculas favoritas aqui!</h1></div>
         </div>
      );
 }
