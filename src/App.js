@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Components/Header';
-import Main from './Components/Main'
+import Header from './React_Router/Header';
+import Main from './React-Routing/Main'
 
 function App() {
   return (
