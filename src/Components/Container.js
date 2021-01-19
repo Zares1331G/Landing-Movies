@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
+
 class Container extends React.Component{
     state = { movies : null };
 
@@ -10,7 +11,6 @@ class Container extends React.Component{
         .then(movies => this.setState({ movies }))
     }
     render(){
-        console.log(this.state.movies);
         const {movies}=this.state;
 
         const cards = !movies ? "Loading..." : movies.results.map((card)=>(
