@@ -1,5 +1,6 @@
 import React from 'react';
 import { mockComponent } from 'react-dom/test-utils';
+import ReactPlayer from 'react-player';
 
 
 const Details = ({img,title,genreId,date,overview,popularity,video,casting}) => {
@@ -10,14 +11,14 @@ const videoYT = `https://www.youtube.com/watch?v=${vid}`;
 const genre = genreId.map(genre => (genre.name + " "));
 const actors= casting.filter(cast => cast.known_for_department === "Acting").slice(0, 10).map(casts => (casts.name + ", "));
 
-console.log(actors);
+
     return (
             <div className="details">
                 <div className="container">
                    <div className="row card-detail">
                         <div className="col-sm-12 d-flex justify-content-between">
                             <img className="photos" src={baseImageUrl}/>
-                            <video className="video" src={videoYT} width="150%" height="" controls/>  
+                            <ReactPlayer url={videoYT} width="100%" height="500px"/>
                         </div>             
                     </div>      
                 </div>                          
